@@ -14,5 +14,5 @@ class pool{
 	static string html;
 	uint line = 1;
 	uint linetmp;
-	int delegate() getLine = &_getLine;
+	int delegate() getLine;
 }

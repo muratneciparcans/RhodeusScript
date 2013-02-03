@@ -399,8 +399,9 @@ class Parser{
 
 	void parseIt(){
 		int _getLine(){
-			return -1;
+			return dataPool.line;
 		}
+		dataPool.getLine = &_getLine;
 		tokens.clear();
 		im=indexOf(codes[wci..$], "<|");
 		if (im==-1){
