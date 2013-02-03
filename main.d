@@ -33,7 +33,6 @@ void handler(Cgi cgi){
 		response ~= "Hata: "~x.msg;
 	}
 	cgi.write(response);
-	std.stdio.stdin.readln();
 }
 
 mixin GenericMain!handler;
