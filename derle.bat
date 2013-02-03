@@ -1,0 +1,2 @@
+dmd -release main.d Script.d pool.d parser.d Commands.d keywords.d fs.d library\web.d library\sha1.d library\sha.d library\mysql.d library\dom.d library\dini.d library\characterencodings.d library\cgi.d interpreter\inp.d interpreter\modules\main.d  errorHandling\errorHandler.d 
+pause
