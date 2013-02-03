@@ -24,8 +24,7 @@ class Interpreter{
 	string exedir;
 
 	public void setError(T...)(int ow, T args){
-
-		writeln("Amk talha :D");		throw new RhError(ow, args);
+		throw new RhError(ow, args);
 	}
 
 	string output;
@@ -85,8 +84,8 @@ class Interpreter{
 	void main(Command[] yrms, dataManagement dM = null){
 		if (dM is null) dM = this.dM;
 		bool n=false;
-		writeln("Running...");
-		long z = Clock.currSystemTick().usecs();
+		//writeln("Running...");
+		//long z = Clock.currSystemTick().usecs();
 
 		int i;
 		int getLine(){ return yrms[i].line;}
@@ -94,8 +93,8 @@ class Interpreter{
 		for(;i<yrms.length;i++){
 			yrms[i].run(dM);
 		}
-		long y = Clock.currSystemTick().usecs();
-		writeln("Elapsed time: ",y-z);
+		//long y = Clock.currSystemTick().usecs();
+		//writeln("Elapsed time: ",y-z);
 	}
 }
 
