@@ -18,7 +18,7 @@ import std.process: getenv, environment;
 void handler(Cgi cgi){
 	Script script;
 	try{
-		script = new Script();//"c:/inetpub/wwwroot/"
+		script = new Script();
 	}catch(RhError re){
 		cgi.setResponseStatus("503 Service Unavailable");
 		cgi.write("Bad configuration file!");
@@ -26,9 +26,7 @@ void handler(Cgi cgi){
 	}
 	string response;
 	try{
-		response = script.execute("c:/inetpub/wwwroot/12.rhs", cgi);
-//		response = script.execute("c:/inetpub/wwwroot/tutorials/kitapcik.build.rhs", cgi);
-//		response = script.execute(getenv("PATH_TRANSLATED"), cgi);
+		response = script.execute(getenv("PATH_TRANSLATED"), cgi);
 	}catch(RhError x){
 		response ~= "Hata: "~x.msg ~"<br>\nSatır: "~text(x.line);
 	}catch(Throwable x){
